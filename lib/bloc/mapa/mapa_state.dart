@@ -13,7 +13,7 @@ class MapaState {
 
   MapaState({
     this.mapaListo = false,
-    this.dibujarRecorrido = true,
+    this.dibujarRecorrido = false,
     this.seguirUbicacion = false,
     this.ubicacionCentral,
     Map<String, Polyline> polylines,

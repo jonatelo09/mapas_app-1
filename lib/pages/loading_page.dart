@@ -25,7 +25,6 @@ class _LoadingPageState extends State<LoadingPage> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
-    print('========> $state');
     if (state == AppLifecycleState.resumed) {
       if (await Geolocator.isLocationServiceEnabled()) {
         Navigator.pushReplacement(
@@ -57,9 +56,6 @@ class _LoadingPageState extends State<LoadingPage> with WidgetsBindingObserver {
     final permisoGPS = await Permission.location.isGranted;
     // GPS esta activo
     final gpsActivo = await Geolocator.isLocationServiceEnabled();
-
-    print('GPS-Activo: ======== $gpsActivo');
-    print('PermisoGPS: ======== $permisoGPS');
 
     if (permisoGPS && gpsActivo) {
       Navigator.pushReplacement(

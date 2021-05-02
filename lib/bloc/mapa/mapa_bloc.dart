@@ -52,7 +52,6 @@ class MapaBloc extends Bloc<MapaEvent, MapaState> {
     } else if (event is OnSeguirUbicacion) {
       yield* this._onSeguirUbicacion(event);
     } else if (event is OnMovioMapa) {
-      print(event.centroMapa);
       yield state.copyWith(ubicacionCentral: event.centroMapa);
     }
   }
@@ -72,7 +71,6 @@ class MapaBloc extends Bloc<MapaEvent, MapaState> {
 
   Stream<MapaState> _onMarcarRecorrido(OnMarcarRecorrido event) async* {
     if (!state.dibujarRecorrido) {
-      print('Dibujar Recorrido');
       this._miRuta = this._miRuta.copyWith(colorParam: Colors.black87);
     } else {
       this._miRuta = this._miRuta.copyWith(colorParam: Colors.transparent);
